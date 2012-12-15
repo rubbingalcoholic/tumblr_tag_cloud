@@ -401,7 +401,7 @@
 			// If the domain was bogus, we're done.
 			if (empty($blog))
 			{
-				return '[FAIL: The specified blog is not defined.]';
+				return '[FAIL!!!1!! The specified blog is not defined. L0zER!]';
 			}
 
 			// First check the cache for the html output
