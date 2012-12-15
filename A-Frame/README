@@ -1,0 +1,9 @@
+Installation:
+1. Download A-Frame, make sure the folder is named "A-Frame"
+2. Create your project directory at the same level:
+	A-Frame/
+	MyProject/
+3. Copy A-Frame/skeleton/* to MyProject/
+4. Copy MyProject/includes/local.default.php to MyProject/includes/local.php
+5. Create a new virtual host for MyProject/ OR MyProject/webroot/
+6. Enjoy =)
