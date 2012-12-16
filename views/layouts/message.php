@@ -98,7 +98,7 @@
 
 			label {
 				display: block;
-				color: gray;
+				font-size: 24px;
 				margin-bottom: 10px;
 			}
 			input { 
