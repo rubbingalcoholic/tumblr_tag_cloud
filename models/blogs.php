@@ -404,6 +404,9 @@
 				return '[FAIL!!!1!! The specified blog is not defined. L0zER!]';
 			}
 
+			// RA HACK ~ Increase PHP's execution time limit so the request doesn't fail for bigger workloads
+			set_time_limit(600);
+
 			// First check the cache for the html output
 			$ns 			= $this->get_blog_cache_ns($blog['id']);
 			$cache_key		= 'blogs_model:'.$ns.':get_tag_cloud';
@@ -411,7 +414,7 @@
 
 			if ($html_output)
 			{
-				$this->debug_js_write("CACHE HIT");
+				$this->debug_js_write("CACHE HIT!");
 				return $html_output;
 			}
 
@@ -420,7 +423,7 @@
 
 			if ($html_output)
 			{
-				$this->debug_js_write("DB CACHE HIT");
+				$this->debug_js_write("DB CACHE HIT!");
 				return $html_output;
 			}
 

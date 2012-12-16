@@ -104,6 +104,11 @@
 			// Set our header type to javascript. This is good karma for browser compatibility.
 			header("Content-type: text/javascript");
 
+			// RA HACK ~ This should help keep browsers from timing out while loading the initial results
+			echo "// " . PROJECT_NAME . " by Rubbing Alcoholic\n";
+			echo "// https://github.com/rubbingalcoholic/tumblr_tag_cloud\n";
+			echo "\n";
+
 			$html_output = $this->model->get_tag_cloud($domain);
 
 			$this->set('html_output', $html_output);
