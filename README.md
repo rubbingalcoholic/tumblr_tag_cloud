@@ -33,11 +33,11 @@ tables are prefixed with 'cloud_' so you can choose an existing database without
 fear of it being gummed up with weird new tables everywhere.)
 
 2. Place the application files on your web server such that your subdomain's
-public HTML directory is hosting the contents of the app's webroot/ directory,
+public web directory is hosting the contents of the app's webroot/ directory,
 and the other application directories such as controllers/ and models/ live in
-the parent directory of your public HTML. Note that your public HTML directory
+the parent directory of your web directory. Note that your web directory
 does not actually have to be named webroot, it just needs to serve the files
-contained in this project's webroot directory.
+contained in this project's webroot/ directory.
 
 3. Copy the configuration file template from includes/local.default.php to
 includes/local.php and edit the file to specify your local configuration. The
