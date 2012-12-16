@@ -1,5 +1,3 @@
-php_flag magic_quotes_gpc off
-
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteCond %{REQUEST_FILENAME} !-d
