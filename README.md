@@ -18,7 +18,6 @@ which makes it easy to configure your tag cloud and get the embed code.
 
 This app is distributed under the MIT License and is free software.
 
--------------------------------------------------------------------------------
 
 Requirements
 ------------
@@ -26,7 +25,6 @@ Requirements
 * A subdomain to host the app on
 * A few minutes of your time to install
 
--------------------------------------------------------------------------------
 
 Installation
 ------------
@@ -49,7 +47,6 @@ you're a n00b_, in which case contact me and I'll help you and fix the docs.
 4. Go to the subdomain you set the app up on and it should walk you through
 the database installation process. You're good to go!
 
--------------------------------------------------------------------------------
 
 Contributing
 ------------
