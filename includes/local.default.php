@@ -58,10 +58,11 @@
 
 	/**
 	 *	This controls whether Memcache or APC caching will be used. The app will cache to your MySQL
-	 *	database regardless. Set to true **only** if your hosting environment supports Memcache or APC.
+	 *	-- THE APP WILL CACHE TO YOUR MYSQL DATABASE REGARDLESS. --
+	 *	Set to true **only** if your hosting environment supports Memcache or APC. Most shared hosts don't.
 	 *	If set to true, the cache configuration below must be properly specified
 	 */
-	define('CACHING', false);	// ONLY SET TO TRUE IF YOU HAVE MEMCACHE OR APC SUPPORT.
+	define('CACHING', false);
 
 	/**
 	 *	Framework defines. Do not remove. You probably don't need to touch them either.
