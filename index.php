@@ -36,14 +36,16 @@
 	 *
 	 * ------------------------------------------------------------------------
 	 */
+	$app_base	=	dirname(__FILE__);
+
 	/**
 	 *	Actually, we're gonna do one error check to make sure you aren't using
 	 *	this file in your webroot.
 	 */
 	if (!isset($lbase))
 	{
-		$main_content = file_get_contents($lbase . '/views/errors/bad_webroot_layout.php');
-		include $lbase . '/views/layouts/message.php';
+		$main_content = file_get_contents($app_base . '/views/errors/bad_webroot_layout.php');
+		include $app_base . '/views/layouts/message.php';
 		exit;
 	}
 	/**
@@ -60,7 +62,7 @@
 	 * @subpackage	aframe.skeleton
 	 * @license		http://www.opensource.org/licenses/mit-license.php
 	 */
-	$app_base	=	dirname(__FILE__);
+	
 	$core_base	=	$app_base . '/A-Frame';
 	include_once $core_base . '/index.php';
 ?>
