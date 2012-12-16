@@ -117,5 +117,34 @@
 
 			return true;
 		}
+
+		/**
+		 *	Checks whether the provided admin username is valid, and if so, sets the session to logged in
+		 *	Right now it just checks against our local.php defines because this doesn't need to be fancy
+		 *
+		 *	@param string $username		The username
+		 *	@param string $password		The password
+		 */
+		function do_login($username, $password)
+		{
+			if ($username == ADMIN_USERNAME && $password == ADMIN_PASSWORD)
+			{
+				$_SESSION['logged_in'] = true;
+				return true;
+			}
+			return false;
+		}
+
+		/**
+		 *	Checks whether the provided admin username is valid, and if so, sets the session to logged in
+		 *	Right now it just checks against our local.php defines because this doesn't need to be fancy
+		 */
+		function do_logout()
+		{
+			if (isset($_SESSION['logged_in']))
+				unset($_SESSION['logged_in']);
+
+			return true;
+		}
 	}
 ?>

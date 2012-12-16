@@ -57,26 +57,9 @@
 		 */
 		function require_http_authorization()
 		{
-			if (
-				!isset($_SERVER['PHP_AUTH_USER'])
-				||
-				!isset($_SERVER['PHP_AUTH_PW'])
-				||
-				$_SERVER['PHP_AUTH_USER'] != ADMIN_USERNAME
-				||
-				$_SERVER['PHP_AUTH_PW'] != ADMIN_PASSWORD
-			)
+			if (!isset($_SESSION['logged_in']))
 			{
-				Header("WWW-Authenticate: Basic realm=\"Memcache Login\"");
-				Header("HTTP/1.0 401 Unauthorized");
-
-				echo <<<EOB
-				<html><body>
-				<h1>Access Denied!</h1>
-				<big>YOU HAVE FAILED TO PROVIDE THE CORRECT LOGIN CREDENTIALS! LOL!!!1</big>
-				</body></html>
-EOB;
-				exit;
+				$this->redirect('/admin/login?r=' . $_SERVER['REQUEST_URI']);
 			}
 		}
 	}

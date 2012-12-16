@@ -16,24 +16,15 @@
 	class admin extends app_controller
 	{
 		/**
-		 *	The initialization function. Serves primarily as a security check.
-		 */
-		function init()
-		{
-			// Should always call parent's init. LOL
-			parent::init();
-
-			// Pop up a password prompt
-			$this->require_http_authorization();
-		}
-
-		/**
 		 * The index function runs a bunch of checks to see if the app is installed and configured properly.
 		 * If so, the user is redirected to the dashboard page (admin/dashboard).
 		 * If not, the user is prompted to fix the problem.
 		 */
 		function index()
 		{
+			// Pop up a password prompt
+			$this->require_http_authorization();
+
 			// First check to see that the database is set up properly
 			$db_configured_properly = $this->model->test_database_connection();
 
@@ -80,6 +71,9 @@
 		 */
 		function create_tables()
 		{
+			// Pop up a password prompt
+			$this->require_http_authorization();
+
 			$this->model->create_database_tables();
 
 			$this->msg->add("Successfully created the database tables! Time to add a blog!", MSG_SUCCESS);
@@ -87,6 +81,48 @@
 			$db_tables_exist = $this->model->test_database_tables_exist();
 
 			$this->redirect('/admin/index');
+		}
+
+		/**
+		 *	The login page
+		 */
+		function login()
+		{
+			$redirect_to	= htmlspecialchars($this->event->get('r', '/'));
+			$username		= $this->event->get('username');
+			$password		= $this->event->get('password');
+			$posted			= $this->event->get('posted');
+
+			$this->set('message_type', 'prompt');
+
+			if ($posted == 'yes')
+			{
+				if ($this->model->do_login($username, $password))
+				{
+					$this->redirect($redirect_to);
+				}
+				else
+				{
+					$this->set('message_type', 'error');
+					$this->set('access_denied', true);
+				}
+			}
+			$this->set('redirect_to', $redirect_to);
+
+			$this->layout('message');
+			$this->render('admin/login');
+		}
+
+		/**
+		 *	The log out page
+		 */
+		function logout()
+		{
+			$this->model->do_logout();
+
+			$this->set('message_type', 'success');
+			$this->layout('message');
+			$this->render('admin/logout');
 		}
 
 	}
