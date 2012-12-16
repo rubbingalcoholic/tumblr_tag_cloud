@@ -57,10 +57,11 @@
 	define('WEBROOT', '');
 
 	/**
-	 *	Set to true only if your hosting environment supports Memcache or APC.
+	 *	This controls whether Memcache or APC caching will be used. The app will cache to your MySQL
+	 *	database regardless. Set to true **only** if your hosting environment supports Memcache or APC.
 	 *	If set to true, the cache configuration below must be properly specified
 	 */
-	define('CACHING', true);
+	define('CACHING', false);	// ONLY SET TO TRUE IF YOU HAVE MEMCACHE OR APC SUPPORT.
 
 	/**
 	 *	Framework defines. Do not remove. You probably don't need to touch them either.
@@ -74,12 +75,12 @@
 	/**
 	 *	Admin Username, used to password protect the app
 	 */
-	define('ADMIN_USERNAME', 'kill');
+	define('ADMIN_USERNAME', 'admin');
 
 	/**
 	 *	Admin Password
 	 */
-	define('ADMIN_PASSWORD', 'everyone');
+	define('ADMIN_PASSWORD', 'password');
 	
 	/**
 	 *	Put your MySQL database info here.
@@ -101,7 +102,7 @@
 	$config['db']['prefix']	=	'cloud_';		// table prefix of your app
 
 	/**
-	 *	Cache configuration.
+	 *	Cache configuration for Memcache or APC.
 	 *	If you set CACHING to true above, you need to fill this out
 	 */
 	$config['cache']['options']	=	array(
