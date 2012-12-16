@@ -57,23 +57,6 @@
 	define('WEBROOT', '');
 
 	/**
-	 *	This controls whether Memcache or APC caching will be used. The app will cache to your MySQL
-	 *	-- THE APP WILL CACHE TO YOUR MYSQL DATABASE REGARDLESS. --
-	 *	Set to true **only** if your hosting environment supports Memcache or APC. Most shared hosts don't.
-	 *	If set to true, the cache configuration below must be properly specified
-	 */
-	define('CACHING', false);
-
-	/**
-	 *	Framework defines. Do not remove. You probably don't need to touch them either.
-	 */
-	define('DEBUG', false);						// debug mode...displays extended debug info for each request
-	define('DATABASE', true);					// yes, you need a database for this app to work
-	define('ERROR_LEVEL', E_ALL | E_NOTICE);	// our default app PHP error level
-	define('PATH_DISPATCHER', true);			// true = /index.php/framework_request, false = /index.php?url=framework_request
-	define('APP_ERROR_HANDLING', true);			// true = application handles its own errors in controllers/error_handler.php, false = PHP does error handling
-
-	/**
 	 *	Admin Username, used to password protect the app
 	 */
 	define('ADMIN_USERNAME', 'admin');
@@ -103,6 +86,14 @@
 	$config['db']['prefix']	=	'cloud_';		// table prefix of your app
 
 	/**
+	 *	This controls whether Memcache or APC caching will be used. The app will cache to your MySQL
+	 *	-- THE APP WILL CACHE TO YOUR MYSQL DATABASE REGARDLESS. --
+	 *	Set to true **only** if your hosting environment supports Memcache or APC. Most shared hosts don't.
+	 *	If set to true, the cache configuration below must be properly specified
+	 */
+	define('CACHING', false);
+
+	/**
 	 *	Cache configuration for Memcache or APC.
 	 *	If you set CACHING to true above, you need to fill this out
 	 */
@@ -116,4 +107,13 @@
 		'compression'	=>	false,				//MEMCACHE_COMPRESSED,
 		'ttl'			=>	300					// default TTL (in seconds)
 	);
+
+	/**
+	 *	Framework defines. Do not remove. You probably don't need to touch them either.
+	 */
+	define('DEBUG', false);						// debug mode...displays extended debug info for each request
+	define('DATABASE', true);					// yes, you need a database for this app to work
+	define('ERROR_LEVEL', E_ALL | E_NOTICE);	// our default app PHP error level
+	define('PATH_DISPATCHER', true);			// true = /index.php/framework_request, false = /index.php?url=framework_request
+	define('APP_ERROR_HANDLING', true);			// true = application handles its own errors in controllers/error_handler.php, false = PHP does error handling
 ?>

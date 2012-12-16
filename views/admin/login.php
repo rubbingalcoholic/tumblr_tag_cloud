@@ -6,6 +6,6 @@
 		<label for="username"><strong>Please log in:</strong></label>
 	<? } ?>
 	<input type="text" placeholder="username" name="username" tabindex="1"/>
-	<input type="text" placeholder="password" name="password" tabindex="2"/>
+	<input type="password" placeholder="password" name="password" tabindex="2"/>
 	<button tabindex="3"><div>Submit</div></button>
 </form>
