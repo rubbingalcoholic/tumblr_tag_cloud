@@ -25,7 +25,7 @@
 			<? } ?>
 <?=$main_content?>
 			<div class="footer">
-				Tumblr Tag Cloud Copyright &COPY; <a href="http://blog.rubbingalcoholic.com">Rubbing Alcoholic</a>. Distributed under the MIT License. <a href="/admin/logout">(Log out)</a>
+				Tumblr Tag Cloud Copyright &COPY; <a href="http://rubbingalcoholic.com">Rubbing Alcoholic</a>. Distributed under the MIT License. <a href="/admin/logout">(Log out)</a>
 			</div>
 		</div>
 	</body>
