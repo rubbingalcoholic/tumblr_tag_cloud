@@ -1,6 +1,8 @@
 Tumblr Tag Cloud
 ================
-### A simple PHP app that serves a cached tag cloud for your Tumblr blogs.
+### A simple PHP app that serves a cached tag cloud for your Tumblr
+
+[**(See it in action on my blog!)**][3]
 
 Introduction
 ------------
@@ -29,8 +31,8 @@ Requirements
 Installation
 ------------
 1. Create or choose a MySQL database to hold the app's data. (By default,
-tables are prefixed with 'cloud_' so you can choose an existing database without
-fear of it being gummed up with weird new tables everywhere.)
+tables are prefixed with 'cloud_' so you can choose an existing database
+without fear of it being gummed up with weird new tables everywhere.)
 
 2. Place the application files on your web server such that your subdomain's
 public web directory is hosting the contents of the app's webroot/ directory,
@@ -57,3 +59,4 @@ if something doesn't work or isn't clear. You can find me on Twitter
 
 [1]: http://rive.rs/projects/tumblr-tag-clouds
 [2]: https://github.com/lyonbros/a-frame
+[3]: http://blog.rubbingalcoholic.com
