@@ -2,7 +2,7 @@ Tumblr Tag Cloud
 ================
 ### A simple PHP app that serves a cached tag cloud for your Tumblr
 
-[**(See it in action on my blog!)**][3]
+[**See it in action on my blog!**][3]
 
 Introduction
 ------------
